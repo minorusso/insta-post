@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   end
   resources :sessions, only: %i[new create destroy]
   # newアクションに登録フォーム表示
-  resources :users, only: %i[new create show]
+  resources :users
 end
