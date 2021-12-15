@@ -19,17 +19,13 @@ class BlogsController < ApplicationController
 
   # POST /blogs or /blogs.json
   def create
-    @blog = current_user.blogs.build(blog_params) # 現在ログインしているuserのidを、blogのuser_idカラムに挿入する
-    respond_to do |format|
-      if params[:back]
-        render :new
-      elsif @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
-      end
+    @blog = current_user.blogs.build(blog_params)
+    if params[:back]
+      render :new
+    elsif @blog.save
+      redirect_to blogs_path, notice: 'ポストしました'
+    else
+      render :new
     end
   end
 
@@ -69,6 +65,6 @@ class BlogsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def blog_params
-    params.require(:blog).permit(:title, :content, :user_id)
+    params.require(:blog).permit(:title, :content, :user_id, :img, :img_cache)
   end
 end

@@ -1,5 +1,7 @@
 <h3>以下の内容で、送信する。</h3>
 <%= form_with(model: @blog, url: blogs_path, local: true) do |form| %>
+<%= image_tag(@blog.img.url) if @blog.img && @blog.img.url %>
+<%= form.hidden_field :img_cache %>
 <%= form.hidden_field :title %>
 <%= form.hidden_field :content %>
 <p>タイトル:<%= @blog.title %></p>
