@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create destroy]
   # newアクションに登録フォーム表示
   resources :users
+  resources :favorites, only: %i[create destroy]
 end
