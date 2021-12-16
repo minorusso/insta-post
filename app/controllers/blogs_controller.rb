@@ -74,5 +74,6 @@ class BlogsController < ApplicationController
   
   def prohibit_access
     redirect_to blogs_path unless current_user.id == @blog.user.id
+    flash[:notice] = "権限がありません"
   end
 end
