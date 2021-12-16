@@ -8,6 +8,7 @@
 <br>
 <table>
     <td><%= link_to 'プロフィール編集', edit_user_path(@user.id) %>
+        <%= link_to 'お気に入り一覧', favorites_path(@user.id) %>
         <%= link_to '新規投稿', new_blog_path %>
         <%= link_to '投稿一覧', blogs_path %>
 </table>

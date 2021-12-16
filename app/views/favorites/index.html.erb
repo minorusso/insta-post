@@ -1,0 +1,27 @@
+<h1>お気に入り一覧</h1>
+
+<table>
+    <% @favorites.each do |favorite| %>
+    <tr>
+        <th>ユーザー名</th>
+        <td><%= favorite.blog.user.name %></td>
+    </tr>
+    <tr>
+        <th>画像</th>
+        <td><%= image_tag(favorite.blog.img.url) %></td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td><%= favorite.blog.title %></td>
+    </tr>
+    <tr>
+        <th>内容</th>
+        <td><%= favorite.blog.content %></td>
+    </tr>
+
+    <% end %>
+</table>
+
+<br>
+
+<%= link_to "Profileへ戻る", user_path(current_user.id) %>
