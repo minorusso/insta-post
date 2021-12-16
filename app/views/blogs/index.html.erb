@@ -3,8 +3,10 @@
 <table>
   <% @blogs.each do |blog| %>
   <tr>
-    <th>ユーザー名</th>
-    <td><%= blog.user.name %></td>
+    <div class=user_name>
+      <th>ユーザー名</th>
+      <td><%= blog.user.name %></td>
+    </div>
   </tr>
   <tr>
     <th>画像</th>

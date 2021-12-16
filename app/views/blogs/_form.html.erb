@@ -11,14 +11,14 @@
 </div>
 <% end %>
 
-<div class="field">
+<div class="image">
   <%= form.label :image %>
   <%= image_tag(@blog.img.url) if @blog.img && @blog.img.url %>
   <%= form.file_field :img %>
   <%= form.hidden_field :img_cache %>
 </div>
 
-<div class="field">
+<div class="title">
   <%= form.label :title %>
   <%= form.text_field :title %>
 </div>
