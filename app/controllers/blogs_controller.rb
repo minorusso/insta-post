@@ -25,7 +25,8 @@ class BlogsController < ApplicationController
     if params[:back]
       render :new
     elsif @blog.save
-      redirect_to blogs_path, notice: 'ポストしました'
+      ConfirmMailer.confirm_mail(@blog).deliver
+      redirect_to blogs_path, notice: '確認メールを送信しました。'
     else
       render :new
     end
