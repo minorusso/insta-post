@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[show edit update destroy]
+  before_action :prohibit_access, only: %i[edit update destroy]
 
   # GET /blogs or /blogs.json
   def index
@@ -69,5 +70,9 @@ class BlogsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def blog_params
     params.require(:blog).permit(:title, :content, :user_id, :img, :img_cache)
+  end
+  
+  def prohibit_access
+    redirect_to blogs_path unless current_user.id == @blog.user.id
   end
 end
