@@ -3,7 +3,7 @@
  *= require_self
  */
 html {
-    font-size: 50%;
+    font-size: 1rem;
     height: 100%;
 }
 
