@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
     @current_user = User.find_by(id: session[:user_id])
   end
 
-  # def authenticate_user
-  #   redirect_to('/login') if @current_user.nil?
-  # end
-
   private
 
   def login_required

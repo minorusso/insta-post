@@ -1,13 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :login_required, only: %i[new create]
-  # before_action :authenticate_user, { only: %i[edit update] }
   before_action :ensure_correct_user, { only: %i[edit update] }
   def new
     @user = User.new
   end
 
   def create
-    # ユーザがフォームに入力した値でUserモデルの新しいインスタンスを生成する
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user.id)
