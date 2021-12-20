@@ -8,18 +8,21 @@ html {
 }
 
 header {
+    height: 70px;
     width: 100%;
-    height: 100px;
-    background-color: #a108af;
-    font-size: 1.5rem;
-    top: 0px;
-    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-left: 0%;
+    background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+
 }
 
 header p {
     font-size: 3rem;
     color: #fff;
-    padding-top: 30px;
+    padding-top: 15px
 }
 
 body {
@@ -35,17 +38,14 @@ body {
 
 footer {
     width: 100%;
-    height: 100px;
+    height: 50px;
+    text-align: center;
     position: absolute;
-    bottom: auto;
-    background-color: goldenrod;
+    background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
 }
 
 footer p {
-    font-size: 1.5rem;
+    font-size: 1.0rem;
+    padding-top: 10px;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
 }

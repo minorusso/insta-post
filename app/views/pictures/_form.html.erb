@@ -1,10 +1,10 @@
-<%= form_with(model: blog, local: true ,url: choose_new_or_edit ) do |form| %>
-<% if blog.errors.any? %>
+<%= form_with(model:picture, local: true ,url: choose_new_or_edit ) do |form| %>
+<% if picture.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
+  <h2><%= pluralize(picture.errors.count, "error") %> prohibited thispicture from being saved:</h2>
 
   <ul>
-    <% blog.errors.full_messages.each do |message| %>
+    <%picture.errors.full_messages.each do |message| %>
     <li><%= message %></li>
     <% end %>
   </ul>
@@ -13,7 +13,7 @@
 
 <div class="image">
   <%= form.label :image %>
-  <%= image_tag(@blog.img.url) if @blog.img && @blog.img.url %>
+  <%= image_tag(@picture.img.url) if @picture.img && @picture.img.url %>
   <%= form.file_field :img %>
   <%= form.hidden_field :img_cache %>
 </div>

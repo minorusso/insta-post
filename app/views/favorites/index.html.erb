@@ -4,19 +4,19 @@
     <% @favorites.each do |favorite| %>
     <tr>
         <th>ユーザー名</th>
-        <td><%= favorite.blog.user.name %></td>
+        <td><%= favorite.picture.user.name %></td>
     </tr>
     <tr>
         <th>画像</th>
-        <td><%= image_tag(favorite.blog.img.url) %></td>
+        <td><%= image_tag(favorite.picture.img.url) %></td>
     </tr>
     <tr>
         <th>タイトル</th>
-        <td><%= favorite.blog.title %></td>
+        <td><%= favorite.picture.title %></td>
     </tr>
     <tr>
         <th>内容</th>
-        <td><%= favorite.blog.content %></td>
+        <td><%= favorite.picture.content %></td>
     </tr>
 
     <% end %>

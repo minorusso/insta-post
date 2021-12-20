@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :blogs
+  has_many :pictures
   has_many :favorites, dependent: :destroy
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 255 },

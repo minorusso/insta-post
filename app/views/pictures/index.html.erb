@@ -1,0 +1,34 @@
+<h1>Pictures一覧</h1>
+
+<table>
+  <% @pictures.each do |picture| %>
+  <tr>
+    <div class=user_name>
+      <th>ユーザー名</th>
+      <td><%= picture.user.name %></td>
+    </div>
+  </tr>
+  <tr>
+    <th>画像</th>
+    <td><%= image_tag(picture.img.url) %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= picture.title %></td>
+  </tr>
+  <tr>
+    <th>内容</th>
+    <td><%= picture.content %></td>
+  </tr>
+  <td><%= link_to 'Show', picture %></td>
+  <% if current_user.id == picture.user_id %>
+  <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+  <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New picture', new_picture_path %>
